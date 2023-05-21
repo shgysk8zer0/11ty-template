@@ -19,7 +19,7 @@ export default {
 		globals: {},
 	},
 	plugins: [
-		rollupImport(['_data/importmap.yaml']),
+		rollupImport(['_data/importmap.yml']),
 		terser(),
 	],
 };
