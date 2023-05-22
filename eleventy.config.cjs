@@ -1,27 +1,9 @@
 /* eslint-env node */
-const { escape } = require("nunjucks/src/filters");
 const { load } = require('js-yaml');
-
-const filters = require('./11ty-filters.cjs');
+const filters = require('@shgysk8zer0/11ty-filters');
+// const filters = require('./11ty-filters.cjs');
 
 module.exports = function(eleventyConfig) {
-	const site = {
-		title: '11ty Test',
-		description: 'A test of Eleventy',
-		repository: { username: 'kernvalley', project: '11ty-template' },
-		url: process.env.ELEVENTY_RUN_MODE === 'build' ? 'https://localhost:8080/' : 'https://example.com',
-		viewport: 'width=device-width',
-		referrer: 'no-referrer',
-		'color-scheme': 'light dark',
-		'og-type': 'website',
-		base: '/',
-		manifest: '/webapp.webmanifest',
-		service_worker: '/service-worker.js',
-		'keep-kern-clean': true,
-	};
-
-	// {{ myVar | jsonify }}
-	eleventyConfig.addFilter('absolute_url', input => new URL(input, site.url).href);
 	Object.entries(filters).forEach(([filter, cb]) => eleventyConfig.addFilter(filter, cb));
 
 	eleventyConfig.addFilter('is_icon', list => {
@@ -53,7 +35,6 @@ module.exports = function(eleventyConfig) {
 
 	// {% if dev %}
 	eleventyConfig.addGlobalData('dev', process.env.ELEVENTY_RUN_MODE === 'build');
-	eleventyConfig.addGlobalData('site', site);
 
 	return {
 		dir: {
@@ -66,4 +47,4 @@ module.exports = function(eleventyConfig) {
 			extname: '.html',
 		}
 	};
-}
+};
