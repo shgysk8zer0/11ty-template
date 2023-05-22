@@ -1,0 +1,16 @@
+---
+# nonce: c23ddb4e-a8ec-44f0-ad77-d1ac60938c7e
+imports:
+  'std-js/': https://cdn.kernvalley.us/js/std-js/
+  '@shgysk8zer0/kazoo/': https://unpkg.com/@shgysk8zer0/kazoo@0.0.14/
+  '@shgysk8zer0/konami': https://unpkg.com/@shgysk8zer0/konami@1.0.9/konami.js
+  '@shgysk8zer0/polyfills': https://unpkg.com/@shgysk8zer0/polyfills@0.0.7/all.min.js
+  '@shgysk8zer0/polyfills/': https://unpkg.com/@shgysk8zer0/polyfills@0.0.7/
+  '@shgysk8zer0/components/': https://unpkg.com/@shgysk8zer0/components@0.0.9/
+  '@kernvalley/components/': https://unpkg.com/@shgysk8zer0/components@0.0.9/krv/
+  '@shgysk8zer0/http-status': https://unpkg.com/@shgysk8zer0/http-status@1.0.1/http-status.js
+  'leaflet': https://unpkg.com/leaflet@1.9.3/dist/leaflet-src.esm.js
+  'firebase/': https://www.gstatic.com/firebasejs/9.16.0/
+  'url-pattern': https://unpkg.com/urlpattern-polyfill@8.0.2/index.js
+  'custom-elements': https://unpkg.com/@webcomponents/custom-elements@1.6.0/custom-elements.min.js
+
