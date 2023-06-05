@@ -68,6 +68,6 @@
   },
   "homepage": "https://github.com/shgysk8zer0/11ty-template#readme",
   "dependencies": {
-    "@shgysk8zer0/11ty-netlify": "^1.0.2"
+    "@shgysk8zer0/11ty-netlify": "^1.0.4"
   }
 }
