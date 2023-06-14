@@ -1,4 +1,7 @@
 _site/*
+*.min.*
+*.map
+img/icons.svg
 !_site/.gitkeep
 # Logs
 logs

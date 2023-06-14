@@ -1,11 +1,14 @@
+#!/usr/bin/env node
 /* eslint-env node */
 const { load } = require('js-yaml');
 const filters = require('@shgysk8zer0/11ty-filters');
-// const filters = require('./11ty-filters.cjs');
+const { markdownIt } = require('@shgysk8zer0/11ty-netlify/markdown');
+const { importmap } = require('@shgysk8zer0/importmap');
 
 module.exports = function(eleventyConfig) {
 	Object.entries(filters).forEach(([filter, cb]) => eleventyConfig.addFilter(filter, cb));
-
+	eleventyConfig.addFilter('trim', input => input.trim());
+	eleventyConfig.addFilter('time', input => new Date(`2000-01-01T${input}`).toLocaleTimeString());
 	eleventyConfig.addFilter('is_icon', list => {
 		return JSON.stringify(list.filter(icon => typeof icon.purpose === 'string'));
 	});
@@ -25,8 +28,11 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addLayoutAlias('post', '11ty-layouts/post.html');
 	eleventyConfig.addLayoutAlias('default', '11ty-layouts/default.html');
 
+	eleventyConfig.setLibrary('md', markdownIt);
+
 	// Set global data/variables
 	// {{ environment }} -> 'production' | 'development'
+	eleventyConfig.addGlobalData('importmap', importmap);
 	eleventyConfig.addGlobalData('environment',
 		process.env.ELEVENTY_RUN_MODE === 'build'
 			? 'production'
@@ -48,3 +54,4 @@ module.exports = function(eleventyConfig) {
 		}
 	};
 };
+
