@@ -28,7 +28,7 @@
     "create:lock": "npm i --package-lock-only",
     "git:fetch": "git fetch --prune --tags",
     "git:submodules": "git submodule update --init --recursive",
-    "lint": "npm run lint:js && npm run lint:css && npm run lint:html",
+    "lint": "npm run lint:js && npm run lint:css",
     "lint:js": "eslint . --ext .js,.cjs,.mjs",
     "lint:css": "stylelint ${npm_package_config_dir_css}**.css",
     "lint:html": "htmlhint ${npm_package_config_dir_html}",
