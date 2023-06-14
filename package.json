@@ -37,7 +37,7 @@
     "build": "npm run build:icons && npm run build:css && npm run build:js",
     "build:site": "npx @11ty/eleventy",
     "build:site:dev": "npx @11ty/eleventy --serve",
-    "build:css": "echo ${npm_package_config_dir_css}index.css -o ${npm_package_config_dir_css}index.min.css",
+    "build:css": "postcss ${npm_package_config_dir_css}index.css -o ${npm_package_config_dir_css}index.min.css",
     "build:js": "rollup --config rollup.config.js",
     "build:icons": "svg-use-symbols -c ${npm_package_config_icons} -o 'img/icons.svg'",
     "serve:production": "npx @11ty/eleventy --serve",
