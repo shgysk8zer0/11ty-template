@@ -1,6 +1,6 @@
 {
   "name": "11ty-template",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A GitHub template repo for projects using Eleventy & Netlify",
   "private": true,
   "type": "module",
@@ -29,11 +29,11 @@
     "git:fetch": "git fetch --prune --tags",
     "git:submodules": "git submodule update --init --recursive",
     "lint": "npm run lint:js && npm run lint:css",
-    "lint:js": "eslint . --ext .js,.cjs,.mjs",
+    "lint:js": "eslint .",
     "lint:css": "stylelint ${npm_package_config_dir_css}**.css",
     "lint:html": "htmlhint ${npm_package_config_dir_html}",
     "fix:css": "stylelint ${npm_package_config_dir_css}**.css --fix",
-    "fix:js": "eslint. --fix --ext .js,.cjs,.mjs",
+    "fix:js": "eslint. --fix",
     "build": "npm run build:icons && npm run build:css && npm run build:js",
     "build:site": "npx @11ty/eleventy",
     "build:site:dev": "npx @11ty/eleventy --serve",
@@ -69,5 +69,8 @@
   "homepage": "https://github.com/shgysk8zer0/11ty-template#readme",
   "dependencies": {
     "@shgysk8zer0/11ty-netlify": "^1.1.9"
+  },
+  "devDependencies": {
+    "@shgysk8zer0/eslint-config": "^1.0.1"
   }
 }
