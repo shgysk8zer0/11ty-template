@@ -2,7 +2,6 @@
 layout: null
 ---
 'use strict';
-/* eslint-env serviceworker */
 /* global init: readonly, config: readonly */
 /* {{ site.data.app.version | default: site.version }} */
 const CDN = 'https://cdn.kernvalley.us/';

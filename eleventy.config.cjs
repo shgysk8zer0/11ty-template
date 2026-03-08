@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-/* eslint-env node */
 const { load } = require('js-yaml');
 const filters = require('@shgysk8zer0/11ty-filters');
 const { markdownIt } = require('@shgysk8zer0/11ty-netlify/markdown');
