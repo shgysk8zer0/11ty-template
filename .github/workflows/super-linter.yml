@@ -58,7 +58,7 @@ jobs:
       # Checkout the code base #
       ##########################
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           # super-linter needs the full git history to get the
           # list of files that changed across commits
@@ -68,7 +68,7 @@ jobs:
       # Run Linter against code base #
       ################################
       - name: Lint Code Base
-        uses: super-linter/super-linter@v8.1.0
+        uses: super-linter/super-linter@v8.5.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # DEFAULT_BRANCH: master
@@ -87,7 +87,7 @@ jobs:
 
           # Valate Languages - Uncomment to Enable
           # JS/TS/JSON Disabled until ESLint in super-linter is updated
-          # VALIDATE_HTML: true
+          VALIDATE_HTML: true
           VALIDATE_CSS: true
           # VALIDATE_JAVASCRIPT_ES: true
           # VALIDATE_JAVASCRIPT_STANDARD: true

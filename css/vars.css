@@ -1,5 +1,5 @@
-@import url("https://cdn.kernvalley.us/css/core-css/theme/default/index.css");
-@import url("https://cdn.kernvalley.us/css/core-css/theme/properties.css");
+@import url("https://unpkg.com/@shgysk8zer0/core-css@2.5.5/theme/default/index.css");
+@import url("https://unpkg.com/@shgysk8zer0/core-css@2.5.5/theme/properties.css");
 
 :root {
 	--map-width: 100%;
