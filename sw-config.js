@@ -38,10 +38,6 @@ const config = {
 		'{{ importmap.imports["@shgysk8zer0/kazoo/"] }}harden.js',
 		'{{ importmap.imports["@shgysk8zer0/components/"] }}leaflet/map.min.js',
 
-		/* Custom Element Templates */
-		'{{ importmap.imports["@shgysk8zer0/components/"] }}/weather/current.html',
-		'{{ importmap.imports["@shgysk8zer0/components/"] }}/github/user.html',
-
 		/* CSS */
 		'/css/index.min.css',
 		'{{ importmap.imports["@shgysk8zer0/components/"] }}weather/current.css',
@@ -60,15 +56,8 @@ const config = {
 		'/img/octicons/info.svg',
 		'/img/adwaita-icons/status/avatar-default.svg',
 
-		/* Event Images */
-		'/img/raster/rodeo.jpg',
-		'/img/raster/parade.jpg',
-		'/img/raster/encampment.jpg',
-		'/img/raster/coach-320.jpg',
-
 		/* Fonts */
 		'https://cdn.kernvalley.us/fonts/roboto.woff2',
-		'https://cdn.kernvalley.us/fonts/rye.woff2',
 	].map(path => new URL(path, location.origin).href),
 	allowed: [
 		'https://www.google-analytics.com/analytics.js',
