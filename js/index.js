@@ -46,16 +46,6 @@ if (typeof GA === 'string' && GA.length !== 0) {
 	}, { priority: 'background' });
 }
 
-Promise.all([
-	customElements.whenDefined('install-prompt'),
-	ready(),
-]).then(([HTMLInstallPromptElement]) => {
-	init();
-
-	if (location.pathname.startsWith('/contact')) {
-		on('#contact-form', ['cubmit'], submitHandler);
-	}
-
-	on('#install-btn', ['click'], () => new HTMLInstallPromptElement().show())
-		.forEach(el => el.hidden = false);
-});
+if (location.pathname.startsWith('/contact')) {
+	on('#contact-form', ['submit'], submitHandler);
+}
