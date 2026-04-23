@@ -10,7 +10,7 @@ permalink: /_headers
   Link: <{{ importmap.imports['@shgysk8zer0/polyfills'] }}>; rel=preload; as=script; referrerpolicy=no-referrer; crossorigin=anonymous;
   Link: </js/index.min.js>; rel=preload; as=script; referrerpolicy=no-referrer;
   Link: </css/index.min.css>; rel=preload; as=style; referrerpolicy=no-referrer;
-  Content-Security-Policy: default-src {{ csp.default.default-src | join: ' ' }}; base-uri {{ csp.default.base-uri | join: ' ' }}; img-src {{ csp.default.img-src | join: ' ' }}; script-src {{ csp.default.script-src | join: ' ' }} '{{ importmap | jsonify | sri }}'; style-src {{ csp.default.style-src | join: ' ' }}; connect-src {{ csp.default.connect-src | join: ' ' }}; font-src {{ csp.default.font-src | join: ' ' }}; media-src {{ csp.default.media-src | join: ' ' }}; frame-src {{ csp.default.frame-src | join: ' ' }}; form-action {{ csp.default.form-action | join: ' ' }}; manifest-src {{ csp.default.manifest-src | join: ' ' }}; worker-src {{ csp.default.worker-src | join: ' ' }}; upgrade-insecure-requests; block-all-mixed-content; trusted-types {{ policies.trusted | join: ' '}}; require-trusted-types-for 'script';
+  Content-Security-Policy: default-src {{ csp.default.default-src | join: ' ' }}; base-uri {{ csp.default.base-uri | join: ' ' }}; img-src {{ csp.default.img-src | join: ' ' }}; script-src {{ csp.default.script-src | join: ' ' }} '{{ importmap | jsonify | sri }}'; style-src {{ csp.default.style-src | join: ' ' }}; connect-src {{ csp.default.connect-src | join: ' ' }}; font-src {{ csp.default.font-src | join: ' ' }}; media-src {{ csp.default.media-src | join: ' ' }}; frame-src {{ csp.default.frame-src | join: ' ' }}; form-action {{ csp.default.form-action | join: ' ' }}; manifest-src {{ csp.default.manifest-src | join: ' ' }}; worker-src {{ csp.default.worker-src | join: ' ' }} {{ importmap.imports['@aegisjsproject/hermes/'] }}; upgrade-insecure-requests; block-all-mixed-content; trusted-types {{ policies.trusted | join: ' '}}; require-trusted-types-for 'script';
 
 /*
   X-Content-Type-Options: nosniff
@@ -20,7 +20,7 @@ permalink: /_headers
   Link: <{{ importmap.imports['@shgysk8zer0/polyfills'] }}>; rel=preload; as=script; referrerpolicy=no-referrer; crossorigin=anonymous;
   Link: </js/index.min.js>; rel=preload; as=script; referrerpolicy=no-referrer;
   Link: </css/index.min.css>; rel=preload; as=style; referrerpolicy=no-referrer;
-  Content-Security-Policy: default-src {{ csp.default.default-src | join: ' ' }}; base-uri {{ csp.default.base-uri | join: ' ' }}; img-src {{ csp.default.img-src | join: ' ' }}; script-src {{ csp.default.script-src | join: ' ' }} '{{ importmap | jsonify | sri }}'; style-src {{ csp.default.style-src | join: ' ' }}; connect-src {{ csp.default.connect-src | join: ' ' }}; font-src {{ csp.default.font-src | join: ' ' }}; media-src {{ csp.default.media-src | join: ' ' }}; frame-src {{ csp.default.frame-src | join: ' ' }}; form-action {{ csp.default.form-action | join: ' ' }}; manifest-src {{ csp.default.manifest-src | join: ' ' }}; worker-src {{ csp.default.worker-src | join: ' ' }}; upgrade-insecure-requests; block-all-mixed-content; trusted-types {{ policies.trusted | join: ' '}}; require-trusted-types-for 'script';
+  Content-Security-Policy: default-src {{ csp.default.default-src | join: ' ' }}; base-uri {{ csp.default.base-uri | join: ' ' }}; img-src {{ csp.default.img-src | join: ' ' }}; script-src {{ csp.default.script-src | join: ' ' }} '{{ importmap | jsonify | sri }}'; style-src {{ csp.default.style-src | join: ' ' }}; connect-src {{ csp.default.connect-src | join: ' ' }}; font-src {{ csp.default.font-src | join: ' ' }}; media-src {{ csp.default.media-src | join: ' ' }}; frame-src {{ csp.default.frame-src | join: ' ' }}; form-action {{ csp.default.form-action | join: ' ' }}; manifest-src {{ csp.default.manifest-src | join: ' ' }}; worker-src {{ csp.default.worker-src | join: ' ' }} {{ importmap.imports['@aegisjsproject/hermes/'] }}; upgrade-insecure-requests; block-all-mixed-content; trusted-types {{ policies.trusted | join: ' '}}; require-trusted-types-for 'script';
 
 /reset
   Referrer-Policy: no-referrer
@@ -28,8 +28,8 @@ permalink: /_headers
   Content-Security-Policy: default-src 'self'; script-src 'self' cdn.kernvalley.us;
 
 /worker.js
-  Content-Security-Policy: default-src 'self'; connect-src *; script-src 'self' {{ importmap.imports['@aegisjsproject/hermes'] }};
-  Link: <{{ importmap.imports['@aegisjsproject/hermes'] }}>; rel=preload; as=script;
+  Content-Security-Policy: default-src 'self'; connect-src *; script-src 'self' {{ importmap.imports['@aegisjsproject/hermes/'] }}worker.js;
+  Link: <{{ importmap.imports['@aegisjsproject/hermes/'] }}worker.js>; rel=preload; as=script;
 
 /*
   X-Content-Type-Options: nosniff

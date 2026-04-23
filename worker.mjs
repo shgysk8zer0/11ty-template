@@ -20,7 +20,7 @@ new HermesWorker([
 			pathname: `/(${staticDirs.join('|')})/*`,
 		}),
 		prefetch: [
-			'/js/index.min.js', '/css/index.min.css', '/img/icons.svg', '/img/favicon.svg',
+			'/js/index.min.js', '/css/index.min.css',
 		].map(path => URL.parse(path, location.origin)),
 	}, {
 		name: 'unpkg',

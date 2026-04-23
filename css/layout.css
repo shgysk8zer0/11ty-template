@@ -3,7 +3,7 @@
 @import url("./sidebar.css");
 @import url("./main.css");
 @import url("./footer.css");
-@import url("https://cdn.kernvalley.us/css/core-css/layout/index.css");
+@import url("https://unpkg.com/@shgysk8zer0/core-css@3.0.0/layout/index.css");
 
 .content {
 	margin: 1.2em;

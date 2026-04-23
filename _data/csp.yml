@@ -15,7 +15,6 @@ default:
     - "'self'"
   worker-src:
     - "'self'"
-    - https://unpkg.coom/@aegisjsproject/
   style-src:
     - "'self'"
     - https://cdn.kernvalley.us/css/
