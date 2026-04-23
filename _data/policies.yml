@@ -1,5 +1,5 @@
 trusted:
-  # - default
+  - default
   - empty#html
   - empty#script
   - ga#script-url
@@ -9,4 +9,3 @@ trusted:
   - krv-events#html
   - github-user#html
   - share-to-buttons#html
-  - pwa-install
