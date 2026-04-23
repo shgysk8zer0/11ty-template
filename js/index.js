@@ -1,27 +1,36 @@
 import '@shgysk8zer0/kazoo/theme-cookie.js';
 import { getGooglePolicy } from '@shgysk8zer0/kazoo/trust-policies.js';
-import { ready, toggleClass, css, on } from '@shgysk8zer0/kazoo/dom.js';
-import { debounce } from '@shgysk8zer0/kazoo/events.js';
+import { toggleClass, on } from '@shgysk8zer0/kazoo/dom.js';
 import { init } from '@shgysk8zer0/kazoo/data-handlers.js';
 import { importGa, externalHandler, telHandler, mailtoHandler } from '@shgysk8zer0/kazoo/google-analytics.js';
+import { registerServiceWorker } from '@aegisjsproject/hermes/registry.js';
 import { submitHandler } from './contact-demo.js';
 import { GA } from './consts.js';
 import './components.js';
 
-if (! CSS.supports('height', '1dvh')) {
-	css([document.documentElement], { '--viewport-height': `${window.innerHeight}px`});
+if ('trustedTypes' in globalThis) {
+	trustedTypes.createPolicy('default', {
+		createHTML() {
+			return trustedTypes.emptyHTML;
+		},
+		createScript() {
+			return trustedTypes.emptyScript;
+		},
+		createScriptURL(input) {
+			const url = URL.parse(input, document.baseURI);
 
-	requestIdleCallback(() => {
-		on([window], {
-			resize: debounce(() => css([document.documentElement], { '--viewport-height': `${window.innerHeight}px`})),
-			scroll: () => {
-				requestAnimationFrame(() => {
-					css('#header', { 'background-position-y': `${-0.5 * scrollY}px` });
-				});
+			if (url instanceof URL && url.origin === location.origin) {
+				return url.href;
+			} else {
+				throw new TypeError(`Invalid script URL "${input}".`);
 			}
-		}, { passive: true });
+		}
 	});
 }
+
+registerServiceWorker(document.documentElement.dataset.serviceWorker, {
+	type: document.documentElement.dataset.serviceWorkerType ?? 'module',
+});
 
 toggleClass([document.documentElement], {
 	'no-dialog': document.createElement('dialog') instanceof HTMLUnknownElement,
@@ -46,16 +55,8 @@ if (typeof GA === 'string' && GA.length !== 0) {
 	}, { priority: 'background' });
 }
 
-Promise.all([
-	customElements.whenDefined('install-prompt'),
-	ready(),
-]).then(([HTMLInstallPromptElement]) => {
-	init();
+if (location.pathname.startsWith('/contact')) {
+	on('#contact-form', ['submit'], submitHandler);
+}
 
-	if (location.pathname.startsWith('/contact')) {
-		on('#contact-form', ['cubmit'], submitHandler);
-	}
-
-	on('#install-btn', ['click'], () => new HTMLInstallPromptElement().show())
-		.forEach(el => el.hidden = false);
-});
+init();

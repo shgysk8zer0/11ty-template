@@ -1,6 +1,6 @@
 {
   "name": "11ty-template",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "A GitHub template repo for projects using Eleventy & Netlify",
   "private": true,
   "type": "module",
@@ -68,6 +68,7 @@
   },
   "homepage": "https://github.com/shgysk8zer0/11ty-template#readme",
   "dependencies": {
-    "@shgysk8zer0/11ty-netlify": "^1.1.36"
+    "@shgysk8zer0/11ty-netlify": "^1.1.36",
+    "@shgysk8zer0/importmap": "^1.9.6"
   }
 }

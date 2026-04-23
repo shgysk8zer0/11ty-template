@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v2.0.0] - 2026-04-23
+
+### Changed
+- Use `@aegisjsproject/hermes` for service worker
+- Use `@aegisjsproject/pwa-prompt`
+- Update Trusted Types Policies
+
+### Removed
+- Delete old assets
+
 ## [v1.0.1] - 2024-09-19
 
 ### Added
